@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Enums\UserRole;
 use App\Models\Role;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -15,7 +16,7 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-        $superAdminRole = Role::where('slug', 'super-admin')->first();
+        $superAdminRole = Role::where('slug', UserRole::SUPERADMIN->toSlug())->first();
         User::updateOrCreate([
             'role_id' => $superAdminRole->id,
             'name' => 'Super Admin',
@@ -23,7 +24,7 @@ class UserSeeder extends Seeder
             'password' => Hash::make('password'),
         ]);
 
-        $adminRole = Role::where('slug', 'admin')->first();
+        $adminRole = Role::where('slug', UserRole::ADMIN->toSlug())->first();
         User::updateOrCreate([
             'role_id' => $adminRole->id,
             'name' => 'Admin',
@@ -31,7 +32,7 @@ class UserSeeder extends Seeder
             'password' => Hash::make('password'),
         ]);
 
-        $userRole = Role::where('slug', 'user')->first();
+        $userRole = Role::where('slug', UserRole::USER->toSlug())->first();
         User::updateOrCreate([
             'role_id' => $userRole->id,
             'name' => 'John Doe',

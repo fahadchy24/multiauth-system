@@ -29,12 +29,12 @@ class PermissionSeeder extends Seeder
                 ]
             ],
             [
-                'module' => 'Role Management',
+                'module' => 'UserRole Management',
                 'permissions' => [
-                    ['name' => 'Access Role', 'slug' => 'app.roles.index'],
-                    ['name' => 'Create Role', 'slug' => 'app.roles.create'],
-                    ['name' => 'Edit Role', 'slug' => 'app.roles.edit'],
-                    ['name' => 'Delete Role', 'slug' => 'app.roles.destroy'],
+                    ['name' => 'Access UserRole', 'slug' => 'app.roles.index'],
+                    ['name' => 'Create UserRole', 'slug' => 'app.roles.create'],
+                    ['name' => 'Edit UserRole', 'slug' => 'app.roles.edit'],
+                    ['name' => 'Delete UserRole', 'slug' => 'app.roles.destroy'],
                 ]
             ],
             [
